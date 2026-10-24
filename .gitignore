@@ -5,3 +5,6 @@ out
 .env
 *.tsbuildinfo
 next-env.d.ts
+
+# Skema database (disimpan lokal saja)
+supabase/
