@@ -113,7 +113,7 @@ export function AppSidebar(props: ShellProps) {
     <aside className="fixed inset-y-0 left-0 z-20 hidden w-64 flex-col border-r border-stone-200 bg-white/80 backdrop-blur lg:flex">
       <div className="flex items-center gap-2 px-5 py-5 font-semibold text-primary-700">
         <Heart className="h-5 w-5 fill-primary-600 text-primary-600" />
-        <span className="font-serif text-lg">Wedding Planner</span>
+        <span className="font-serif text-lg">Rencana Menikah</span>
       </div>
       <div className="px-3">
         <WeddingSwitcher wedding={props.wedding} weddings={props.weddings} />

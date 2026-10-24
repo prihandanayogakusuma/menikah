@@ -7,7 +7,7 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakart
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: { default: "Wedding Budget Planner", template: "%s · Wedding Budget Planner" },
+  title: { default: "Rencana Menikah", template: "%s · Rencana Menikah" },
   description: "Susun anggaran pernikahan, pantau pembayaran vendor, dan lacak target tabungan bersama pasangan.",
 };
 

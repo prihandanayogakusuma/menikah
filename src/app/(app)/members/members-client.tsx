@@ -257,7 +257,7 @@ export function MembersClient({
 }
 
 function ShareButtons({ url, email, weddingTitle, compact }: { url: string; email: string; weddingTitle: string; compact?: boolean }) {
-  const text = `Hai! Aku mengundangmu untuk mengelola board "${weddingTitle}" bersama di Wedding Budget Planner. Login/daftar dengan email ${email}, lalu buka link ini: ${url}`;
+  const text = `Hai! Aku mengundangmu untuk mengelola board "${weddingTitle}" bersama di Rencana Menikah. Login/daftar dengan email ${email}, lalu buka link ini: ${url}`;
   return (
     <div className={compact ? "flex flex-wrap gap-1.5" : "mt-3 flex flex-wrap gap-2"}>
       <Button

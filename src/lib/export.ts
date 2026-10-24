@@ -108,7 +108,7 @@ export async function exportExcel(input: ExportInput) {
   const ExcelJS = (await import("exceljs")).default;
   const r = buildReport(input);
   const wb = new ExcelJS.Workbook();
-  wb.creator = "Wedding Budget Planner";
+  wb.creator = "Rencana Menikah";
   wb.created = new Date();
 
   const headerStyle = (ws: import("exceljs").Worksheet) => {

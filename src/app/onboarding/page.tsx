@@ -23,7 +23,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
     <main className="min-h-screen bg-gradient-to-b from-primary-50 via-[#fbf9f7] to-[#fbf9f7]">
       <header className="mx-auto flex max-w-3xl items-center justify-between px-4 py-5">
         <div className="flex items-center gap-2 font-semibold text-primary-700">
-          <Heart className="h-5 w-5 fill-primary-600 text-primary-600" /> Wedding Budget Planner
+          <Heart className="h-5 w-5 fill-primary-600 text-primary-600" /> Rencana Menikah
         </div>
         <div className="flex items-center gap-3">
           {memberships.length > 0 && (
