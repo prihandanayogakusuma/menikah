@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-primary-50: #fdf2f4;
+  --color-primary-100: #fce7eb;
+  --color-primary-200: #f9d0d9;
+  --color-primary-300: #f4a9ba;
+  --color-primary-400: #ec7894;
+  --color-primary-500: #df4c72;
+  --color-primary-600: #c92d5b;
+  --color-primary-700: #a9214b;
+  --color-primary-800: #8d1f44;
+  --color-primary-900: #781e3f;
+
+  --color-gold-50: #fbf8ef;
+  --color-gold-100: #f5edd5;
+  --color-gold-200: #ebd9aa;
+  --color-gold-300: #dfc077;
+  --color-gold-400: #d4a74f;
+  --color-gold-500: #c58f37;
+  --color-gold-600: #a9712d;
+  --color-gold-700: #885527;
+
+  --color-groom: #3b6fb6;
+  --color-bride: #df4c72;
+}
+
+:root {
+  --background: #fbf9f7;
+  --foreground: #1c1917;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hilangkan spinner input number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
