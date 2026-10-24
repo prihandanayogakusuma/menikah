@@ -1,11 +1,16 @@
 import { redirect } from "next/navigation";
 import { Database } from "lucide-react";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { SUPABASE_ANON_KEY, SUPABASE_URL, isSupabaseConfigured } from "@/lib/supabase/config";
 
 export const metadata = { title: "Setup" };
 
 export default function SetupPage() {
   if (isSupabaseConfigured) redirect("/login");
+
+  const checks = [
+    { name: "NEXT_PUBLIC_SUPABASE_URL", ok: SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("xxxxxxxx") },
+    { name: "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (atau ..._ANON_KEY)", ok: SUPABASE_ANON_KEY.length > 20 },
+  ];
 
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-4 py-12">
@@ -17,6 +22,20 @@ export default function SetupPage() {
         <p className="mt-2 text-sm text-stone-600">
           Aplikasi belum terhubung ke database. Ikuti langkah berikut, lalu restart server <code>npm run dev</code>.
         </p>
+        <ul className="mt-4 space-y-1.5 rounded-lg bg-stone-50 p-3 text-sm">
+          {checks.map((c) => (
+            <li key={c.name} className="flex items-center gap-2">
+              <span className={c.ok ? "text-emerald-600" : "text-red-600"}>{c.ok ? "✓" : "✗"}</span>
+              <code className="text-xs">{c.name}</code>
+              <span className="text-xs text-stone-500">{c.ok ? "terbaca" : "belum terbaca"}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+          <b>Deploy di Vercel?</b> Isi variabel di atas pada Project → Settings → Environment Variables (centang Production, Preview,
+          Development), lalu <b>Redeploy</b>. Variabel <code>NEXT_PUBLIC_*</code> dibaca saat build, jadi menambah variabel tanpa redeploy tidak
+          akan berpengaruh.
+        </div>
         <ol className="mt-6 list-decimal space-y-3 pl-5 text-sm text-stone-700">
           <li>
             Buat project di <span className="font-medium">supabase.com</span>, lalu buka <span className="font-medium">SQL Editor</span> dan jalankan
