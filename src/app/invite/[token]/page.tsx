@@ -7,6 +7,7 @@ import { signOut } from "@/app/auth/actions";
 import { formatDate, ROLE_LABEL } from "@/lib/utils";
 import type { MemberRole } from "@/lib/types";
 import { AcceptInviteButton } from "./accept-button";
+import { Copyright } from "@/components/copyright";
 
 export const metadata = { title: "Undangan" };
 
@@ -23,7 +24,7 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
   const emailMatches = inv && user.email?.toLowerCase() === String(inv.email).toLowerCase();
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-primary-50 to-[#fbf9f7] px-4 py-12">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-primary-50 to-[#fbf9f7] px-4 py-12">
       <div className="w-full max-w-md rounded-3xl border border-stone-200 bg-white p-8 text-center shadow-sm">
         {!inv ? (
           <>
@@ -67,6 +68,7 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
           </>
         )}
       </div>
+      <Copyright className="mt-6" />
     </main>
   );
 }

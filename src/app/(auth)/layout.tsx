@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { Copyright } from "@/components/copyright";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,13 +21,16 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="pointer-events-none absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-white/10" />
         <div className="pointer-events-none absolute -top-16 right-24 h-40 w-40 rounded-full bg-white/10" />
       </section>
-      <section className="flex items-center justify-center px-4 py-10 sm:px-8">
-        <div className="w-full max-w-sm">
-          <div className="mb-8 flex items-center gap-2 font-semibold text-primary-700 lg:hidden">
-            <Heart className="h-5 w-5 fill-primary-600 text-primary-600" /> Rencana Menikah
+      <section className="flex min-h-screen flex-col px-4 sm:px-8">
+        <div className="flex flex-1 items-center justify-center py-10">
+          <div className="w-full max-w-sm">
+            <div className="mb-8 flex items-center gap-2 font-semibold text-primary-700 lg:hidden">
+              <Heart className="h-5 w-5 fill-primary-600 text-primary-600" /> Rencana Menikah
+            </div>
+            {children}
           </div>
-          {children}
         </div>
+        <Copyright />
       </section>
     </main>
   );

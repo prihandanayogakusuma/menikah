@@ -4,6 +4,7 @@ import { Heart, LogOut } from "lucide-react";
 import { signOut } from "@/app/auth/actions";
 import { getMemberships, getMyPendingInvitations, getUser } from "@/lib/wedding";
 import { OnboardingForm } from "./onboarding-form";
+import { Copyright } from "@/components/copyright";
 import { PendingInvitations } from "@/components/pending-invitations";
 
 export const metadata = { title: "Mulai" };
@@ -56,6 +57,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
 
         <OnboardingForm />
       </div>
+      <Copyright />
     </main>
   );
 }

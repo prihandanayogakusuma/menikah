@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { Database } from "lucide-react";
 import { SUPABASE_ANON_KEY, SUPABASE_URL, isSupabaseConfigured } from "@/lib/supabase/config";
+import { Copyright } from "@/components/copyright";
 
 export const metadata = { title: "Setup" };
 
@@ -57,6 +58,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000`}
           </li>
         </ol>
       </div>
+      <Copyright className="mt-6" />
     </main>
   );
 }
